@@ -51,7 +51,14 @@ export default function PatientForm() {
                         className="w-full p-3  border border-gray-100"
                         type="text"
                         placeholder="Nombre del Propietario"
+                        {...register('caretaker', {
+                            required: 'El nombre del propietario es obligatorio',
+                        })}
                     />
+
+                    {errors.caretaker && (
+                        <ErrorMessage>{errors.caretaker?.message?.toString()}</ErrorMessage>
+                    )}
                 </div>
 
                 <div className="mb-5">
@@ -63,7 +70,17 @@ export default function PatientForm() {
                         className="w-full p-3  border border-gray-100"
                         type="email"
                         placeholder="Email de Registro"
+                        {...register("email", {
+                            required: "El Email es Obligatorio",
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,  //Expresion regular de email
+                                message: 'Email No Válido'
+                            }
+                        })} 
                     />
+                    {errors.email && (
+                        <ErrorMessage>{errors.email?.message?.toString()}</ErrorMessage>
+                    )}
                 </div>
 
                 <div className="mb-5">
@@ -74,7 +91,14 @@ export default function PatientForm() {
                         id="date"
                         className="w-full p-3  border border-gray-100"
                         type="date"
+                        {...register('date', {
+                            required: 'La fecha no es valida',
+                        })}
                     />
+
+                    {errors.date && (
+                        <ErrorMessage>{errors.date?.message?.toString()}</ErrorMessage>
+                    )}
                 </div>
 
                 <div className="mb-5">
