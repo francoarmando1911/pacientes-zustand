@@ -92,7 +92,7 @@ export default function PatientForm() {
                         className="w-full p-3  border border-gray-100"
                         type="date"
                         {...register('date', {
-                            required: 'La fecha no es valida',
+                            required: 'La fecha de alta es obligatoria',
                         })}
                     />
 
@@ -109,7 +109,13 @@ export default function PatientForm() {
                         id="symptoms"
                         className="w-full p-3  border border-gray-100"
                         placeholder="Síntomas del paciente"
-                    ></textarea>
+                        {...register('symptoms', {
+                            required: 'Los sintomas son obligatorios',
+                        })}
+                    />
+                    {errors.symptoms && (
+                        <ErrorMessage>{errors.symptoms?.message?.toString()}</ErrorMessage>
+                    )}
                 </div>
 
                 <input
