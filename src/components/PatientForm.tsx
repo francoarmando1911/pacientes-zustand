@@ -33,14 +33,13 @@ export default function PatientForm() {
                         type="text"
                         placeholder="Nombre del Paciente"
                         {...register('name', {
-                            required: 'El nombre del paciente es obligatorio'
+                            required: 'El nombre del paciente es obligatorio',
                         })}
                     />
 
                     {errors.name && (
                         <ErrorMessage>{errors.name?.message?.toString()}</ErrorMessage>
                     )}
-
                 </div>
 
                 <div className="mb-5">
