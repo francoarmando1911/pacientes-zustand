@@ -23,7 +23,7 @@ export default function PatientForm() {
             </p>
 
             <form
-                className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
+                className="bg-white shadow-md rounded-xl py-10 px-5 mb-10"
                 noValidate
                 onSubmit={handleSubmit(registerPatient)}
             >
@@ -124,7 +124,7 @@ export default function PatientForm() {
 
                 <input
                     type="submit"
-                    className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors"
+                    className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors rounded-xl"
                     value='Guardar Paciente'
                 />
             </form>
