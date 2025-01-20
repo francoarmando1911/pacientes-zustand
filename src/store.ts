@@ -22,6 +22,8 @@ export const usePatientStore = create<PatientState>((set) => ({
 
     },
     deletePatient:(id) => {
-        console.log(id)
+        set((state) => ({
+            patients: state.patients.filter(patient => patient.id !== id)
+        }))
     }
 }))
