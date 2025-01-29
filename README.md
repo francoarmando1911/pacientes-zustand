@@ -1,50 +1,8 @@
-# React + TypeScript + Vite
+# Control pacientes veterinaria
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+He creado una aplicación web para gestionar pacientes y sus dueños en una veterinaria. La aplicación permite registrar, editar y eliminar registros de manera eficiente, asignando a cada paciente un ID único para mantener la organización y el control de la información.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Algunos aspectos clave del desarrollo:
+✅ Uso de React-Hook-Form para validaciones de formularios robustas y sencillas.
+✅ Implementación de Zustand (por primera vez) para manejar el estado global de la aplicación, almacenando los pacientes en un array y simplificando la gestión de datos.
+✅ Integración de React-Toastify para mostrar notificaciones dinámicas al editar o eliminar pacientes, mejorando la experiencia del usuario.
